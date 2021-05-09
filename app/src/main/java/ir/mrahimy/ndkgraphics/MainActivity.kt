@@ -1,32 +1,18 @@
 package ir.mrahimy.ndkgraphics
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
-import ir.mrahimy.ndkgraphics.pages.P115Activity
+import androidx.appcompat.app.AppCompatActivity
+import ir.mrahimy.ndkgraphics.bitmapfill.BasicBitmapActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        findViewById<Button>(R.id.p115).setOnClickListener {
-            startActivity(Intent(this@MainActivity, P115Activity::class.java))
-        }
-    }
-
-    /**
-     * A native method that is implemented by the 'native-lib' native library,
-     * which is packaged with this application.
-     */
-    external fun stringFromJNI(): String
-
-    companion object {
-        // Used to load the 'native-lib' library on application startup.
-        init {
-            System.loadLibrary("native-graphics")
+        findViewById<Button>(R.id.basicBitmap).setOnClickListener {
+            startActivity(Intent(this@MainActivity, BasicBitmapActivity::class.java))
         }
     }
 }

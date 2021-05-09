@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NdkGraphics">
-        <activity android:name=".pages.P115Activity"
-            android:label="@string/p115"/>
+        <activity
+            android:name=".bitmapfill.BasicBitmapActivity"
+            android:label="@string/basic_bitmap" />
 
         <activity android:name=".MainActivity">
             <intent-filter>
