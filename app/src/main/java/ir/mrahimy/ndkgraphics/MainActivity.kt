@@ -1,16 +1,20 @@
 package ir.mrahimy.ndkgraphics
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
+import ir.mrahimy.ndkgraphics.pages.P115Activity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Example of a call to a native method
-        findViewById<TextView>(R.id.sample_text).text = stringFromJNI()
+        findViewById<Button>(R.id.p115).setOnClickListener {
+            startActivity(Intent(this@MainActivity, P115Activity::class.java))
+        }
     }
 
     /**
