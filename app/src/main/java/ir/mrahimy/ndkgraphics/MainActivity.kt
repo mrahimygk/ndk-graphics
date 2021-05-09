@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import ir.mrahimy.ndkgraphics.bitmapfill.BasicBitmapActivity
+import ir.mrahimy.ndkgraphics.pages.Page115Activity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,6 +14,10 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.basicBitmap).setOnClickListener {
             startActivity(Intent(this@MainActivity, BasicBitmapActivity::class.java))
+        }
+
+        findViewById<Button>(R.id.p115).setOnClickListener {
+            startActivity(Intent(this@MainActivity, Page115Activity::class.java))
         }
     }
 }

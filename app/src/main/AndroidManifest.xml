@@ -12,6 +12,9 @@
         <activity
             android:name=".bitmapfill.BasicBitmapActivity"
             android:label="@string/basic_bitmap" />
+        <activity
+            android:name=".pages.Page115Activity"
+            android:label="@string/p115" />
 
         <activity android:name=".MainActivity">
             <intent-filter>
