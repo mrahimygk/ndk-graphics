@@ -3,8 +3,7 @@
 #include <android/bitmap.h>
 #include "bitmap-basic.cpp"
 
-void
-fill_bitmap(
+void fill_bitmap(
         AndroidBitmapInfo *ptr,
         uint8_t *pixels,
         jdouble height_position_ratio,
