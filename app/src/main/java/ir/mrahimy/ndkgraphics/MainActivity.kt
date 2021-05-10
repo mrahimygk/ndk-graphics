@@ -6,6 +6,7 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import ir.mrahimy.ndkgraphics.bitmapfill.BasicBitmapActivity
 import ir.mrahimy.ndkgraphics.pages.Page115Activity
+import ir.mrahimy.ndkgraphics.pages.SineActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,6 +19,10 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.p115).setOnClickListener {
             startActivity(Intent(this@MainActivity, Page115Activity::class.java))
+        }
+
+        findViewById<Button>(R.id.sine).setOnClickListener {
+            startActivity(Intent(this@MainActivity, SineActivity::class.java))
         }
     }
 }

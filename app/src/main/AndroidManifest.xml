@@ -15,6 +15,9 @@
         <activity
             android:name=".pages.Page115Activity"
             android:label="@string/p115" />
+        <activity
+            android:name=".pages.SineActivity"
+            android:label="@string/sine" />
 
         <activity android:name=".MainActivity">
             <intent-filter>
