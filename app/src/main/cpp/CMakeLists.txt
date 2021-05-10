@@ -24,15 +24,6 @@ add_library( # Sets the name of the library.
         bitmap-basic.cpp)
 
 add_library( # Sets the name of the library.
-        bitmap-p115
-
-        # Sets the library as a shared library.
-        SHARED
-
-        # Provides a relative path to your source file(s).
-        bitmap-p115.cpp)
-
-add_library( # Sets the name of the library.
         bitmap-sine
 
         # Sets the library as a shared library.
@@ -60,14 +51,6 @@ find_library( # Sets the name of the path variable.
 
 target_link_libraries( # Specifies the target library.
         bitmap-basic
-        android
-        jnigraphics
-        # Links the target library to the log library
-        # included in the NDK.
-        ${log-lib})
-
-target_link_libraries( # Specifies the target library.
-        bitmap-p115
         android
         jnigraphics
         # Links the target library to the log library

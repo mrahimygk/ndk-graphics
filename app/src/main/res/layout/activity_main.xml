@@ -14,18 +14,6 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/basicBitmap"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/basic_bitmap" />
-
-        <Button
-            android:id="@+id/p115"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/p115" />
-
-        <Button
             android:id="@+id/sine"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

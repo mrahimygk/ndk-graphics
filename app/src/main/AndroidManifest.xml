@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NdkGraphics">
         <activity
-            android:name=".bitmapfill.BasicBitmapActivity"
-            android:label="@string/basic_bitmap" />
-        <activity
             android:name=".pages.Page115Activity"
             android:label="@string/p115" />
         <activity
