@@ -13,6 +13,10 @@
             android:name=".pages.SineActivity"
             android:label="@string/sine" />
 
+        <activity
+            android:name=".pages.RandomActivity"
+            android:label="@string/random" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

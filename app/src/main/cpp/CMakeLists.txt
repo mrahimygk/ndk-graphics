@@ -32,6 +32,15 @@ add_library( # Sets the name of the library.
         # Provides a relative path to your source file(s).
         bitmap-sine.cpp)
 
+add_library( # Sets the name of the library.
+        bitmap-random
+
+        # Sets the library as a shared library.
+        SHARED
+
+        # Provides a relative path to your source file(s).
+        bitmap-random.cpp)
+
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because CMake includes system libraries in the search path by
 # default, you only need to specify the name of the public NDK library
@@ -59,6 +68,14 @@ target_link_libraries( # Specifies the target library.
 
 target_link_libraries( # Specifies the target library.
         bitmap-sine
+        android
+        jnigraphics
+        # Links the target library to the log library
+        # included in the NDK.
+        ${log-lib})
+
+target_link_libraries( # Specifies the target library.
+        bitmap-random
         android
         jnigraphics
         # Links the target library to the log library
