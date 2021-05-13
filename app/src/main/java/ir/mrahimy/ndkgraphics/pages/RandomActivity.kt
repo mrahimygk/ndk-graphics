@@ -1,6 +1,5 @@
 package ir.mrahimy.ndkgraphics.pages
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Canvas
