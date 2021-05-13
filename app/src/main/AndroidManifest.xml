@@ -12,6 +12,9 @@
         <activity
             android:name=".pages.SineActivity"
             android:label="@string/sine" />
+        <activity
+            android:name=".pages.LineActivity"
+            android:label="@string/sine" />
 
         <activity
             android:name=".pages.RandomActivity"

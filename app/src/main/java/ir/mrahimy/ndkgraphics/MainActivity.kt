@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import ir.mrahimy.ndkgraphics.pages.LineActivity
 import ir.mrahimy.ndkgraphics.pages.RandomActivity
 import ir.mrahimy.ndkgraphics.pages.SineActivity
 
@@ -18,6 +19,10 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.random).setOnClickListener {
             startActivity(Intent(this@MainActivity, RandomActivity::class.java))
+        }
+
+        findViewById<Button>(R.id.line).setOnClickListener {
+            startActivity(Intent(this@MainActivity, LineActivity::class.java))
         }
     }
 }
