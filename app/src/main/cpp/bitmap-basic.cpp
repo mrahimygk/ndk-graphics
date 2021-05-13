@@ -50,3 +50,17 @@ void draw_line(
         }
     }
 }
+
+void draw_rectangle(
+        AndroidBitmapInfo *ptr, uint8_t *pixels,
+        float x1, float y1,
+        float x2, float y2,
+        unsigned int color
+) {
+
+    draw_line(ptr, pixels, x1, y1, x2, y1, 0xffffffff);
+    draw_line(ptr, pixels, x1, y1, x1, y2, 0xffffffff);
+    draw_line(ptr, pixels, x2, y1, x2, y2, 0xffffffff);
+    draw_line(ptr, pixels, x1, y2, x2, y2, 0xffffffff);
+
+}
