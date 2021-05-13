@@ -8,6 +8,9 @@ import android.graphics.Color
 import android.graphics.Point
 import android.os.Bundle
 import android.view.View
+import android.view.ViewGroup
+import android.widget.Button
+import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
 
 class RandomActivity : AppCompatActivity() {
@@ -26,7 +29,26 @@ class RandomActivity : AppCompatActivity() {
         val displaySize = Point()
         display.getSize(displaySize)
 
-        setContentView(BasicBitmapView(this@RandomActivity, displaySize.x, displaySize.y))
+        setContentView(
+            RelativeLayout(this).apply {
+                val bg = BasicBitmapView(this@RandomActivity, displaySize.x, displaySize.y)
+                addView(bg)
+                addView(
+                    Button(this@RandomActivity).apply {
+                        text = "Refresh"
+                        setOnClickListener {
+                            bg.invalidate()
+                        }
+                    },
+                    RelativeLayout.LayoutParams(
+                        ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT
+                    ).apply {
+                        addRule(RelativeLayout.CENTER_HORIZONTAL, RelativeLayout.TRUE)
+                        addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, RelativeLayout.TRUE)
+                    }
+                )
+            }
+        )
     }
 
     class BasicBitmapView(
@@ -36,14 +58,7 @@ class RandomActivity : AppCompatActivity() {
     ) : View(context) {
         private var mBitmap: Bitmap? = null
 
-        var heightPositionRatio: Double = 1.0 / 3.0
-        var widthFrequency: Double = 6.0
-
-        private external fun ndkRenderRandom(
-            bitmap: Bitmap?,
-            heightPositionRatio: Double,
-            widthFrequency: Double
-        )
+        private external fun ndkRenderRandom(bitmap: Bitmap?)
 
         init {
             mBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565)
@@ -51,7 +66,7 @@ class RandomActivity : AppCompatActivity() {
 
         override fun onDraw(canvas: Canvas) {
             mBitmap?.eraseColor(Color.BLACK)
-            ndkRenderRandom(mBitmap, heightPositionRatio, widthFrequency)
+            ndkRenderRandom(mBitmap)
             canvas.drawBitmap(mBitmap!!, 0f, 0f, null)
         }
     }
