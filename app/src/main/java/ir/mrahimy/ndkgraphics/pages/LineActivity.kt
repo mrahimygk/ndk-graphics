@@ -15,6 +15,8 @@ class LineActivity : AppCompatActivity() {
         init {
             System.loadLibrary("bitmap-line")
         }
+
+        const val IS_RANDOM = "is_random"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,10 +31,11 @@ class LineActivity : AppCompatActivity() {
                 this@LineActivity,
                 displaySize.x,
                 displaySize.y,
-                displaySize.x/4,
-                displaySize.y/2,
-                displaySize.x/4,
+                displaySize.x / 4,
+                displaySize.y / 2,
+                displaySize.x / 4,
                 200,
+                intent.extras?.containsKey(IS_RANDOM) == true
             )
         )
     }
@@ -44,7 +47,8 @@ class LineActivity : AppCompatActivity() {
         private val x1: Int,
         private val y1: Int,
         private val x2: Int,
-        private val y2: Int
+        private val y2: Int,
+        private val isRandom: Boolean
     ) : View(context) {
         private var mBitmap: Bitmap? = null
 
@@ -56,17 +60,23 @@ class LineActivity : AppCompatActivity() {
             y2: Int
         )
 
+        private external fun ndkRenderRandomLines(bitmap: Bitmap?)
+
         init {
             mBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565)
         }
 
         override fun onDraw(canvas: Canvas) {
             mBitmap?.eraseColor(Color.BLACK)
-            ndkRenderLine(
-                mBitmap,
-                x1, y1,
-                x2, y2
-            )
+            if (isRandom) {
+                ndkRenderRandomLines(mBitmap)
+            } else {
+                ndkRenderLine(
+                    mBitmap,
+                    x1, y1,
+                    x2, y2
+                )
+            }
             canvas.drawBitmap(mBitmap!!, 0f, 0f, null)
         }
     }

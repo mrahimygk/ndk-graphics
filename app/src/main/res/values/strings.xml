@@ -4,4 +4,5 @@
     <string name="sine">Sine</string>
     <string name="random">Random</string>
     <string name="line">Line</string>
+    <string name="random_lines">Random Lines</string>
 </resources>

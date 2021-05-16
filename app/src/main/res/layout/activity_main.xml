@@ -31,5 +31,11 @@
             android:layout_height="wrap_content"
             android:text="@string/line" />
 
+        <Button
+            android:id="@+id/random_lines"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/random_lines" />
+
     </LinearLayout>
 </ScrollView>

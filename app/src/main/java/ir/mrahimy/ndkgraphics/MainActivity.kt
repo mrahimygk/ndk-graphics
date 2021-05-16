@@ -24,5 +24,11 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.line).setOnClickListener {
             startActivity(Intent(this@MainActivity, LineActivity::class.java))
         }
+
+        findViewById<Button>(R.id.random_lines).setOnClickListener {
+            startActivity(Intent(this@MainActivity, LineActivity::class.java).apply {
+                putExtra(LineActivity.IS_RANDOM, true)
+            })
+        }
     }
 }
