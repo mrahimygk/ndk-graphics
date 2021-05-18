@@ -67,9 +67,19 @@ void draw_rectangle(
     if (fill) {
         for (int i = x1; i < x2; ++i) {
             for (int j = y1; j < y2; ++j) {
-                set_pixel(ptr, pixels, i,j, color);
+                set_pixel(ptr, pixels, i, j, color);
             }
         }
     }
 
+}
+
+void step_line(
+        AndroidBitmapInfo *ptr, uint8_t *pixels,
+        float x1, float y1,
+        float xStep, float yStep,
+        unsigned int color,
+        bool fill
+) {
+    draw_line(ptr, pixels, x1, y1, x1 + xStep, y1 + yStep, color);
 }
